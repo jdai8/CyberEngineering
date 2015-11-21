@@ -1,0 +1,74 @@
+{
+  "data": {
+    "events": [],
+    "user": []
+  },
+  "schema": {
+    "events": {
+      "name": {
+        "type": "string"
+      },
+      "organization": {
+        "type": "string"
+      },
+      "compensation": {
+        "type": "string"
+      },
+      "description": {
+        "type": "text"
+      },
+      "date": {
+        "type": "text"
+      },
+      "volunteers": {
+        "type": "array"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "user": {
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "account": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "account_id": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "events": {},
+    "user": {}
+  }
+}

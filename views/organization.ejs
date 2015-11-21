@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Organization</title>
+	<script src="/js/dependencies/jquery-2.1.4.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="/js/dependencies/sails.io.js"></script>
+	<script src="/js/organization.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/organization.css">
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div><h1 id="head">Organizational Account of </h1></div>
+	</nav>
+	<div class="container">
+		<div class="row row-centered">
+			<div class="col-md-4 column-centered" id="first">
+				<form id="form" role="form">
+					<div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
+					<div class="form-group">
+						<label for="InputName"><h4>Enter Name of Event</h4></label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="name" id="InputName" placeholder="Enter Event Name" required>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+							</div>
+					</div>
+					<div class="form-group">
+						<label for="InputEmail"><h4>Enter Organization Name</h4></label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="InputEmailFirst" name="organization" placeholder="Enter Organization" required>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+							</div>
+					</div>
+					<div class="form-group">
+						<label for="InputEmail"><h4>Enter Compensation?</h4></label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="InputEmailSecond" name="compensation" placeholder="Enter Compensation" required>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="InputEmail"><h4>Date</h4></label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="date-test" name="date" placeholder="Add date/time" required>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="InputMessage"><h4>Description</h4></label>
+							<div class="input-group">
+								<textarea name="description" id="InputMessage" class="form-control" rows="5"></textarea>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+						</div>
+					</div>
+					<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+				</form>
+			</div>
+			<div class="col-md-4 column-centered" id="second">	
+				<div class="well well-sm"><strong>Event</strong></div>
+				<ul id="list-group" class="list-group">
+				</ul>
+			</div>
+			<div class="col-md-4 column-centered" id="third">
+			<div class="well well-sm"><strong>Event Name</strong></div>
+			<div class="panel panel-default" id="third">
+				<table class="table">
+					<tr>
+						<th><h4 class="tablehead">Date</h4></th>
+						<td><h4 id="date"></h4></td>
+					</tr>
+					<tr>
+						<th><h4 class="tablehead">Compensation</h4></th>
+						<td><h4 id="compensation"></h4></td>
+					</tr>		  
+					<tr>
+						<th><h4 class="tablehead">Volunteers</h4></th>
+						<td><h4 id="volunteers"></h4></td>
+					</tr>	
+					<tr>
+						<th><h4 class="tablehead">Description</h4></th>
+						<td><h4 id="description"></h4></td>
+					</tr>     
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
