@@ -1,6 +1,7 @@
 import time
 import os
 import threading
+import winsound
 
 class Alarm(threading.Thread):
     def __init__(self, hours, minutes):
@@ -14,34 +15,43 @@ class Alarm(threading.Thread):
             while self.keep_running:
                 now = time.localtime()
                 if (now.tm_hour == self.hours and now.tm_min == self.minutes):
-                    print("ALARM NOW!")
-                    return
-            time.sleep(60)
+                    print("ALARM NOW");
+                    
+                    # windows only - plays sound for 5 seconds
+                    winsound.PlaySound("alarm.wav", winsound.SND_FILENAME | winsound.SND_ASYNC)
+                    time.sleep(5)
+                    winsound.PlaySound(None, 0) 
+                    time.sleep(60)
+                    #using pygame - not tested
+                    #pygame.mixer.init()
+                    #pygame.mixer.music.load("alarm.wav")
+                    #pygame.mixer.music.play()
+                    #while pygame.mixer.music.get_busy() == True:
+                    #    continue
+                else:
+                    time.sleep(1)
+            
         except:
             return
-    def just_die(self):
+            
+    def quit(self):
         self.keep_running = False
 
-
-name = input("Enter your name: ")
-
-print("Hello, " + name)
-
 # hour is in military time: enter 13 for 1 pm
-alarm_HH = input("Enter the hour you want to wake up at: ")
-alarm_MM = input("Enter the minute you want to wake up at: ")
+hour = input("Enter the hour you want to wake up at: ")
+min = input("Enter the minute you want to wake up at: ")
 
-print("You want to wake up at: {0:02}:{1:02}".format(int(alarm_HH), int(alarm_MM)))
+print("You want to wake up at: {0:02}:{1:02}".format(int(hour), int(min)))
 
-alarm = Alarm(alarm_HH, alarm_MM)
+alarm = Alarm(hour, min)
 alarm.start()
 
 try:
     while True:
          text = str(input())
          if text == "stop":
-            alarm.just_die()
+            alarm.quit()
             break
 except:
     print("Yikes lets get out of here")
-    alarm.just_die()
+    alarm.quit()
