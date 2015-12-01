@@ -1,0 +1,53 @@
+# File name: oldVersion.kv
+<MyWidget>:
+
+	# botton right
+	Button:
+		text: 'Blue'
+		id: blue
+		pos: root.right - self.width, root.y
+		size: root.right / 2, root.top / 2
+		color: 0,0,1,1
+		font_size: 64
+		on_press: root.press_button("blue", blue)
+		
+	# top right
+	Button:
+		text: 'Red'
+		id: red
+		pos: root.right - self.width, root.top / 2
+		size: root.right / 2, root.top / 2
+		color: 1,.0,0,1
+		font_size: 64
+		on_press: root.press_button("red", red)
+		
+	# top left
+	Button
+		text: 'Green'
+		id: green
+		pos: root.x, root.top - self.height
+		size: root.right / 2, root.top / 2
+		color: .196078, .803922, .196078, 1
+		font_size: 64
+		on_press: root.press_button("green", green)
+		
+	# bottom left
+	Button
+		text: 'Yellow'
+		id: yellow
+		pos: root.x, root.y
+		size: root.right / 2, root.top / 2
+		color: 1, 1, .4, 1
+		font_size: 64
+		on_press: root.press_button("yellow", yellow)
+		# Image: 
+		#	source: 'white.jpeg'
+		#	x: self.parent.x
+		#	y: self.parent.y
+		#	size: root.right / 2, root.top / 2
+		#	allow_stretch: True
+		
+		
+	# 1, 1, .87843, 1 faint yellow
+	# .139344, .545098, .139344, 1 forrest green 
+	# 50 205 50
