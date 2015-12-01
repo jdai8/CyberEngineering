@@ -9,7 +9,7 @@
  *
  * For more information on views and layouts, check out:
  * http://sailsjs.org/#!/documentation/concepts/Views
- */
+ */dx
 
 module.exports.views = {
 

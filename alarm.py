@@ -1,7 +1,8 @@
 import time
 import os
 import threading
-import winsound
+#import winsound
+import pygame
 
 class Alarm(threading.Thread):
     def __init__(self, hours, minutes):
@@ -18,16 +19,17 @@ class Alarm(threading.Thread):
                     print("ALARM NOW");
                     
                     # windows only - plays sound for 5 seconds
-                    winsound.PlaySound("alarm.wav", winsound.SND_FILENAME | winsound.SND_ASYNC)
-                    time.sleep(5)
-                    winsound.PlaySound(None, 0) 
-                    time.sleep(60)
-                    #using pygame - not tested
-                    #pygame.mixer.init()
-                    #pygame.mixer.music.load("alarm.wav")
-                    #pygame.mixer.music.play()
-                    #while pygame.mixer.music.get_busy() == True:
-                    #    continue
+                    #winsound.PlaySound("alarm.wav", winsound.SND_FILENAME | winsound.SND_ASYNC)
+                    #time.sleep(5)
+                    #winsound.PlaySound(None, 0) 
+                    #time.sleep(60)
+                    
+		    #using pygame - not tested
+                    pygame.mixer.init()
+                    pygame.mixer.music.load("alarm.wav")
+                    pygame.mixer.music.play()
+                    while pygame.mixer.music.get_busy() == True:
+                        continue
                 else:
                     time.sleep(1)
             
